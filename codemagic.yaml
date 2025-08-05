@@ -1,4 +1,3 @@
-codemagic.yaml
 workflows:
   react-native-app:
     name: Watchman App Build
