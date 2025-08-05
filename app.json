@@ -4,29 +4,19 @@
     "slug": "watchman-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "platforms": ["ios", "android"],
-    "jsEngine": "hermes",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/icon.png",
-      "resizeMode": "contain",
+      "image": "./splash.png",
+      "resizeMode": "cover",
       "backgroundColor": "#000000"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true
-    },
+    "platforms": ["ios", "android"],
+    "jsEngine": "hermes",
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#000000"
-      }
+      "package": "com.firegate.watchman"
     },
-    "web": {
-      "favicon": "./assets/icon.png"
+    "ios": {
+      "bundleIdentifier": "com.firegate.watchman"
     }
   }
 }
