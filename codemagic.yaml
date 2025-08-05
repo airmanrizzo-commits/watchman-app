@@ -5,9 +5,9 @@ workflows:
     environment:
       node: 18
     scripts:
-      - npm install -g expo-cli
       - npm install
-      - expo prebuild
-      - expo build:android
+      - npx expo install
+      - npx expo prebuild --platform android
+      - npx expo run:android
     artifacts:
-      - build/**/*
+      - android/app/build/outputs/**/*.apk
