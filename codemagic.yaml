@@ -5,7 +5,7 @@ workflows:
     environment:
       node: 18
       vars:
-        EXPO_TOKEN: $EXPO_TOKEN  # Secure token from Codemagic
+        EXPO_TOKEN: "9qqM3cGBBlwy9x5jXnBiOikVe3Rc-hjTFvv70kwf"
     scripts:
       - npm install -g expo-cli eas-cli
       - npm install
