@@ -5,8 +5,8 @@ workflows:
     environment:
       node: 18
       vars:
-        EXPO_TOKEN: $EXPO_TOKEN
-        CI: "true" # Required to run non-interactive CLI mode
+        EXPO_TOKEN: "<paste your token here>"
+        CI: "true"
     scripts:
       - npm install -g expo-cli eas-cli
       - npm install
