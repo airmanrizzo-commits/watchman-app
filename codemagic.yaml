@@ -1,14 +1,15 @@
 workflows:
   react-native-app:
-    name: Watchman App Build
+    name: Watchman App Build (EAS)
     instance_type: mac_mini_m1
     environment:
       node: 18
+      env:
+        CI: true
     scripts:
-      - npm install -g expo-cli
+      - npm install -g expo-cli eas-cli
       - npm install
       - npx expo prebuild --platform android
-      - npx expo build:android --non-interactive
+      - npx eas build -p android --non-interactive
     artifacts:
-      - dist/**/*.apk
-      - dist/**/*.aab
+      - build/**/*
