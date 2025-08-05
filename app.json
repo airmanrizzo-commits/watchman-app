@@ -7,14 +7,16 @@
     "jsEngine": "hermes",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./splash.png",
+      "image": "./assets/splash.PNG",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
