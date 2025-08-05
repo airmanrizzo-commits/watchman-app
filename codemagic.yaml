@@ -1,16 +1,17 @@
 workflows:
-  ios-app:
-    name: iOS Build
+  watchman-ios:
+    name: Watchman iOS Build
     environment:
-      xcode: latest
-      cocoapods: default
+      ios_signing:
+        distribution_type: app_store
+      vars:
+        EXPO_TOKEN: $EXPO_TOKEN
+      node: 18
     scripts:
-      - name: Install dependencies
-        script: |
-          npm install
-      - name: EAS Build for iOS
-        script: |
-          npx expo prebuild --platform ios
-          npx eas build -p ios --non-interactive
+      - npm install -g expo-cli eas-cli
+      - npm install
+      - eas build:configure --platform ios
+      - npx expo prebuild --platform ios
+      - npx eas build -p ios --non-interactive
     artifacts:
       - build/ios/ipa/*.ipa
