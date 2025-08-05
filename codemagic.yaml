@@ -1,0 +1,14 @@
+codemagic.yaml
+workflows:
+  react-native-app:
+    name: Watchman App Build
+    instance_type: mac_mini_m1
+    environment:
+      node: 18
+    scripts:
+      - npm install -g expo-cli
+      - npm install
+      - expo prebuild
+      - expo build:android
+    artifacts:
+      - build/**/*
