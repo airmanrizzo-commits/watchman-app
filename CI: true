@@ -5,7 +5,7 @@ workflows:
     environment:
       node: 18
       vars:
-        CI: true
+        CI: "true"   # ← must be a string
     scripts:
       - npm install -g expo-cli eas-cli
       - npm install
