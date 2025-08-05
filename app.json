@@ -7,9 +7,8 @@
     "platforms": ["ios", "android"],
     "jsEngine": "hermes",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
@@ -17,11 +16,17 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
-    "android": {
-      "package": "com.firegate.watchman"
-    },
     "ios": {
-      "bundleIdentifier": "com.firegate.watchman"
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#000000"
+      }
+    },
+    "web": {
+      "favicon": "./assets/icon.png"
     }
   }
 }
