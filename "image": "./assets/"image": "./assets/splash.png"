@@ -7,7 +7,7 @@
     "jsEngine": "hermes",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.PNG",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
