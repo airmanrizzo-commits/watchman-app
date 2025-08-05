@@ -4,7 +4,7 @@ workflows:
     instance_type: mac_mini_m1
     environment:
       node: 18
-      env:
+      vars:
         CI: true
     scripts:
       - npm install -g expo-cli eas-cli
