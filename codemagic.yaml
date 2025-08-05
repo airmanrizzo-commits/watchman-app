@@ -4,11 +4,10 @@ workflows:
     instance_type: mac_mini_m1
     environment:
       node: 18
-      vars:
-        CI: true
     scripts:
       - npm install -g expo-cli eas-cli
       - npm install
+      - export CI=true
       - npx expo prebuild --platform android
       - npx eas build -p android --non-interactive
     artifacts:
