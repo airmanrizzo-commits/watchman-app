@@ -1,15 +1,12 @@
 workflows:
-  react-native-app:
-    name: Watchman App Build
-    instance_type: mac_mini_m1
+  watchman-app:
+    name: Watchman iOS Build
     environment:
       node: 18
       vars:
-        EXPO_TOKEN: "9qqM3cGBBlwy9x5jXnBiOikVe3Rc-hjTFvv70kwf"
+        EXPO_TOKEN: $EXPO_TOKEN
     scripts:
       - npm install -g expo-cli eas-cli
       - npm install
-      - npx expo prebuild --platform android
-      - npx eas build -p android --non-interactive
-    artifacts:
-      - build/**/*
+      - npx expo prebuild --platform ios
+      - npx eas build -p ios --non-interactive
