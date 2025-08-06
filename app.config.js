@@ -1,4 +1,4 @@
-{
+export default {
   "cli": {
     "version": ">= 3.13.0"
   },
@@ -14,9 +14,9 @@
   "submit": {
     "production": {
       "ios": {
-        "ascAppId": "6749645144", 
+        "ascAppId": "6749645144",
         "appleId": "airmanrizzo@gmail.com",
-        "appleTeamId": "9295GJRZLK",
+        "appleTeamId": "929SGJRZLK",
         "companyName": "FireGate Bioscience LLC"
       }
     }
