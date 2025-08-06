@@ -6,7 +6,11 @@ workflows:
         distribution_type: app_store
         bundle_identifier: com.firegatebioscience.watchman
       vars:
-        EXPO_TOKEN: $EXPO_TOKEN
+        PROVISIONING_PROFILE: $PROVISIONING_PROFILE
+        P12_BASE64: $P12_BASE64
+        CERT_PASSWORD: $CERT_PASSWORD
+      groups:
+        - FireGate
       node: 18
     scripts:
       - npm install -g expo-cli eas-cli
