@@ -13,22 +13,10 @@ export default {
     updates: {
       fallbackToCacheTimeout: 0
     },
-    assetBundlePatterns: [
-      "**/*"
-    ],
+    assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
       bundleIdentifier: "com.watchman.app"
-    },
-    android: {
-      adaptiveIcon: {
-        foregroundImage: "./assets/adaptive-icon.png",
-        backgroundColor: "#FFFFFF"
-      },
-      package: "com.watchman.app"
-    },
-    web: {
-      favicon: "./assets/favicon.png"
     },
     extra: {
       eas: {
