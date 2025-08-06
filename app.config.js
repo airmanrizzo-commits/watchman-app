@@ -1,4 +1,14 @@
 export default {
+  expo: {
+    name: "Watchman App",
+    slug: "watchman-app",
+    version: "1.0.0",
+    sdkVersion: "50.0.0",
+    platforms: ["ios"],
+    ios: {
+      bundleIdentifier: "com.firegate.watchman"
+    }
+  },
   cli: {
     version: ">= 3.13.0"
   },
@@ -7,8 +17,7 @@ export default {
       ios: {
         image: "macos-xcode16",
         buildType: "release",
-        developmentClient: false,
-        bundleIdentifier: "com.firegate.watchman"
+        developmentClient: false
       }
     }
   },
