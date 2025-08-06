@@ -4,6 +4,7 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
+        bundle_identifier: com.firegate.watchman
       vars:
         EXPO_TOKEN: $EXPO_TOKEN
       node: 18
