@@ -3,10 +3,13 @@ workflows:
     name: Watchman iOS Build
     environment:
       groups:
-        - FireGate2  # This must match the env group name in Codemagic
+        - FireGate2  # <- Use the group where your CERTIFICATE, PROVISIONING_PROFILE, and CERTIFICATE_PASSWORD are set
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.firegatebioscience.watchman
+        provisioning_profile_name: WatchmanAppStore
+      vars:
+        EXPO_TOKEN: $EXPO_TOKEN
     scripts:
       - npm install -g expo-cli eas-cli
       - npm install
