@@ -1,27 +1,18 @@
-export default {
-  expo: {
-    name: "watchman-app",
-    slug: "watchman-app",
-    version: "1.0.0",
-    orientation: "portrait",
-    icon: "./assets/icon.png",
-    splash: {
-      image: "./assets/splash.png",
-      resizeMode: "contain",
-      backgroundColor: "#ffffff"
-    },
-    updates: {
-      fallbackToCacheTimeout: 0
-    },
-    assetBundlePatterns: ["**/*"],
-    ios: {
-      supportsTablet: true,
-      bundleIdentifier: "com.watchman.app"
-    },
-    extra: {
-      eas: {
-        projectId: "bf2c35e0-377d-4a5f-8157-86e09abc949f"
+{
+  "cli": {
+    "version": ">= 3.0.0"
+  },
+  "build": {
+    "production": {
+      "developmentClient": false,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_SECRET_KEY": "your-secret-key-here",
+        "API_URL": "https://your-api-url-here.com"
       }
     }
+  },
+  "submit": {
+    "production": {}
   }
-};
+}
