@@ -14,11 +14,9 @@ export default {
   submit: {
     production: {
       ios: {
+        ascAppId: "6749645144",
         appleId: "airmanrizzo@gmail.com",
-        appleTeamId: "929SG7RZLK",
-        appStoreConnect: {
-          appleId: "6749645144"
-        },
+        appleTeamId: "929SGJRZLK",
         companyName: "FireGate Bioscience LLC"
       }
     }
