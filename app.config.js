@@ -1,37 +1,38 @@
 export default {
   expo: {
-    name: "Watchman App",
+    name: "watchman-app",
     slug: "watchman-app",
     version: "1.0.0",
     orientation: "portrait",
-    jsEngine: "hermes",
     icon: "./assets/icon.png",
     splash: {
       image: "./assets/splash.png",
       resizeMode: "contain",
-      backgroundColor: "#000000"
+      backgroundColor: "#ffffff"
     },
     updates: {
       fallbackToCacheTimeout: 0
     },
-    assetBundlePatterns: ["**/*"],
+    assetBundlePatterns: [
+      "**/*"
+    ],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: "com.firegatebioscience.watchman"
+      bundleIdentifier: "com.watchman.app"
     },
     android: {
-      package: "com.firegatebioscience.watchman",
       adaptiveIcon: {
-        foregroundImage: "./assets/icon.png",
-        backgroundColor: "#000000"
-      }
+        foregroundImage: "./assets/adaptive-icon.png",
+        backgroundColor: "#FFFFFF"
+      },
+      package: "com.watchman.app"
     },
     web: {
-      favicon: "./assets/icon.png"
+      favicon: "./assets/favicon.png"
     },
     extra: {
       eas: {
-        projectId: "bf2c35e0-377d-4a5f-8157-86e09abc9xxx" // keep your real project ID
+        projectId: "bf2c35e0-377d-4a5f-8157-86e09abc949f"
       }
     }
   }
