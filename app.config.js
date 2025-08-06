@@ -16,7 +16,7 @@ export default {
     assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: "com.watchman.app",
+      bundleIdentifier: "com.firegate.watchman",
       infoPlist: {
         ITSAppUsesNonExemptEncryption: false
       }
