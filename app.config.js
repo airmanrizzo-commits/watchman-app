@@ -17,10 +17,10 @@ export default {
     assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: "com.firegate.watchman"
+      bundleIdentifier: "com.firegatebioscience.watchman"
     },
     android: {
-      package: "com.firegate.watchman",
+      package: "com.firegatebioscience.watchman",
       adaptiveIcon: {
         foregroundImage: "./assets/icon.png",
         backgroundColor: "#000000"
@@ -31,7 +31,7 @@ export default {
     },
     extra: {
       eas: {
-        projectId: "bf2c35e0-377d-4a5f-8157-86e09abc949f"
+        projectId: "bf2c35e0-377d-4a5f-8157-86e09abc9xxx" // keep your real project ID
       }
     }
   }
