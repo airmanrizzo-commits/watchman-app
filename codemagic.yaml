@@ -2,16 +2,11 @@ workflows:
   watchman-ios:
     name: Watchman iOS Build
     environment:
+      groups:
+        - FireGate
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.firegatebioscience.watchman
-      vars:
-        PROVISIONING_PROFILE: $PROVISIONING_PROFILE
-        P12_BASE64: $P12_BASE64
-        CERT_PASSWORD: $CERT_PASSWORD
-      groups:
-        - FireGate
-      node: 18
     scripts:
       - npm install -g expo-cli eas-cli
       - npm install
