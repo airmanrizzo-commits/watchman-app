@@ -7,7 +7,8 @@ export default {
       ios: {
         image: "macos-xcode16",
         buildType: "release",
-        developmentClient: false
+        developmentClient: false,
+        bundleIdentifier: "com.firegate.watchman"
       }
     }
   },
