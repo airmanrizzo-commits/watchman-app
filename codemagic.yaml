@@ -1,14 +1,25 @@
 workflows:
   watchman-ios:
     name: Watchman iOS Build
+    max_build_duration: 60
     environment:
-      groups:
-        - FireGate
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: com.firegatebioscience.watchman
+      vars:
+        CERTIFICATE_PASSWORD: $CERTIFICATE_PASSWORD
+        PROVISIONING_PROFILE: $PROVISIONING_PROFILE
+        CERTIFICATE: $CERTIFICATE
+        EXPO_TOKEN: $EXPO_TOKEN
+      node: 18
+      xcode: latest
     scripts:
-      - npm install -g expo-cli eas-cli
+      - echo $CERTIFICATE | base64 --decode > /tmp/certificate.p12
+      - echo $PROVISIONING_PROFILE | base64 --decode > /tmp/profile.mobileprovision
+      - mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+      - cp /tmp/profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+      - security create-keychain -p "" build.keychain
+      - security import /tmp/certificate.p12 -k build.keychain -P $CERTIFICATE_PASSWORD -T /usr/bin/codesign
+      - security list-keychains -s build.keychain
+      - security unlock-keychain -p "" build.keychain
+      - npm install -g eas-cli
       - npm install
       - eas build:configure --platform ios
       - npx expo prebuild --platform ios
