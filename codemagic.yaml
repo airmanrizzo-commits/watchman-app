@@ -3,11 +3,10 @@ workflows:
     name: Watchman iOS Build
     environment:
       groups:
-        - FireGate2  # <- Use the group where your CERTIFICATE, PROVISIONING_PROFILE, and CERTIFICATE_PASSWORD are set
+        - FireGate2  # matches the environment group name
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.firegatebioscience.watchman
-        provisioning_profile_name: WatchmanAppStore
       vars:
         EXPO_TOKEN: $EXPO_TOKEN
     scripts:
