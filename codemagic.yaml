@@ -16,7 +16,7 @@ workflows:
             -archivePath build/Watchman.xcarchive \
             -configuration Release \
             CODE_SIGN_STYLE=Manual \
-            DEVELOPMENT_TEAM=YOUR_TEAM_ID_HERE \
+            DEVELOPMENT_TEAM=9295GJRZLK \
             -allowProvisioningUpdates
 
           echo "Exporting IPA..."
