@@ -4,17 +4,9 @@ workflows:
     environment:
       xcode: latest
       vars:
-        XCODE_WORKSPACE: ios/Watchman.xcworkspace
+        XCODE_PROJECT: ios/Watchman.xcodeproj
         XCODE_SCHEME: Watchman
     scripts:
-      - name: Clean & Install Pods
-        script: |
-          echo "Installing CocoaPods..."
-          cd ios
-          rm -rf Pods Podfile.lock
-          pod install --repo-update
-          cd ..
-
       - name: Set bundle identifier
         script: |
           echo "Setting bundle identifier..."
@@ -24,7 +16,7 @@ workflows:
         script: |
           echo "Archiving app..."
           xcodebuild clean archive \
-            -workspace "$XCODE_WORKSPACE" \
+            -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
             -archivePath build/Watchman.xcarchive \
             -configuration Release \
