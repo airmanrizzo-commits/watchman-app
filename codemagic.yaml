@@ -7,7 +7,9 @@ workflows:
     scripts:
       - name: Set bundle identifier
         script: |
-          echo "Overriding bundle ID in Xcode project"
+          echo "Overriding bundle ID"
           sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = $BUNDLE_ID;/g" ios/Watchman.xcodeproj/project.pbxproj
     artifacts:
-      - build/ios/**/*.ipa
+      - build/ios/ipa/*.ipa
+      - ios/build/Build/Products/Release-iphoneos/*.ipa
+      - /Users/builder/Library/MobileDevice/Archives/**/*.ipa
