@@ -10,10 +10,10 @@ workflows:
           echo "Overriding bundle ID"
           sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = $BUNDLE_ID;/g" ios/Watchman.xcodeproj/project.pbxproj
 
-      - name: Move .ipa to artifact dir
+      - name: Locate and move .ipa
         script: |
           mkdir -p build/ios/ipa
-          find /Users/builder/Library/Developer/Xcode/Archives -name "*.ipa" -exec cp {} build/ios/ipa/ \;
+          find . -type f -name "*.ipa" -exec cp {} build/ios/ipa/ \;
 
     artifacts:
       - build/ios/ipa/*.ipa
