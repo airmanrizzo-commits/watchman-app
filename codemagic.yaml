@@ -4,7 +4,7 @@ workflows:
     environment:
       xcode: latest
       vars:
-        XCODE_PROJECT: ios/Watchman.xcodeproj
+        XCODE_WORKSPACE: ios/Watchman.xcworkspace
         XCODE_SCHEME: Watchman
     scripts:
       - name: Set bundle identifier
@@ -23,11 +23,11 @@ workflows:
         script: |
           echo "Archiving app..."
           xcodebuild clean archive \
-            -project "$XCODE_PROJECT" \
+            -workspace "$XCODE_WORKSPACE" \
             -scheme "$XCODE_SCHEME" \
             -archivePath build/Watchman.xcarchive \
             -configuration Release \
-            CODE_SIGN_STYLE=Automatic \
+            CODE_SIGN_STYLE=Manual \
             DEVELOPMENT_TEAM=YOUR_TEAM_ID_HERE \
             -allowProvisioningUpdates
 
