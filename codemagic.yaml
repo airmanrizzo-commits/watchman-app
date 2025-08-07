@@ -10,7 +10,6 @@ workflows:
       - name: Install JS dependencies
         script: |
           echo "Installing JS dependencies..."
-          # prefer lockfile if present
           if [ -f package-lock.json ]; then
             npm ci
           elif [ -f yarn.lock ]; then
@@ -33,6 +32,11 @@ workflows:
             exit 1
           fi
           cd ..
+
+      - name: Verify schemes
+        script: |
+          echo "Verifying available schemes..."
+          xcodebuild -list -workspace "$XCODE_WORKSPACE"
 
       - name: Build IPA using xcodebuild
         script: |
