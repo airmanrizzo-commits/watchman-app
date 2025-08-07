@@ -3,21 +3,24 @@ workflows:
     name: iOS Release
     environment:
       vars:
-        XCODE_WORKSPACE: ios/Watchman.xcworkspace   # or .xcodeproj if not using CocoaPods
+        XCODE_PROJECT: ios/Watchman.xcodeproj
         XCODE_SCHEME: Watchman
     scripts:
       - name: Set bundle identifier
         script: |
+          echo "Setting bundle identifier..."
           sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = com.firegatebioscience.watchman;/g" ios/Watchman.xcodeproj/project.pbxproj
 
       - name: Build IPA
         script: |
+          echo "Building IPA from .xcodeproj..."
           xcode-project build-ipa \
-            --workspace "$XCODE_WORKSPACE" \
+            --project "$XCODE_PROJECT" \
             --scheme "$XCODE_SCHEME"
 
       - name: Copy IPA to artifact folder
         script: |
+          echo "Copying IPA to build/ios/ipa..."
           mkdir -p build/ios/ipa
           cp $(find . -name "*.ipa" | head -n 1) build/ios/ipa/
 
