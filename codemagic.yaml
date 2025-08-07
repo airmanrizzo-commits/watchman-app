@@ -11,6 +11,13 @@ workflows:
           echo "Setting bundle identifier..."
           sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = com.firegatebioscience.watchman;/g" ios/Watchman.xcodeproj/project.pbxproj
 
+      - name: Install CocoaPods
+        script: |
+          echo "Installing CocoaPods..."
+          cd ios
+          pod install
+          cd ..
+
       - name: Build IPA using xcodebuild
         script: |
           echo "Archiving app..."
@@ -18,7 +25,9 @@ workflows:
             -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
             -archivePath build/Watchman.xcarchive \
-            -configuration Release
+            -configuration Release \
+            CODE_SIGN_STYLE=Automatic \
+            DEVELOPMENT_TEAM=YOUR_TEAM_ID_HERE
 
           echo "Exporting IPA..."
           xcodebuild -exportArchive \
