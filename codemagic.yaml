@@ -3,7 +3,6 @@ workflows:
     name: iOS Release
     environment:
       xcode: latest
-      ruby: 3.1.2
       vars:
         XCODE_PROJECT: ios/Watchman.xcodeproj
         XCODE_SCHEME: Watchman
