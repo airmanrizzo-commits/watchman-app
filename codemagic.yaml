@@ -2,6 +2,9 @@ workflows:
   ios-release:
     name: iOS Release
     environment:
+      os: macos
+      xcode: latest
+      ruby: 3.1.2
       vars:
         XCODE_PROJECT: ios/Watchman.xcodeproj
         XCODE_SCHEME: Watchman
@@ -15,7 +18,7 @@ workflows:
         script: |
           echo "Installing CocoaPods..."
           cd ios
-          pod install
+          pod install || true
           cd ..
 
       - name: Build IPA using xcodebuild
@@ -27,13 +30,5 @@ workflows:
             -archivePath build/Watchman.xcarchive \
             -configuration Release \
             CODE_SIGN_STYLE=Automatic \
-            DEVELOPMENT_TEAM=YOUR_TEAM_ID_HERE
-
-          echo "Exporting IPA..."
-          xcodebuild -exportArchive \
-            -archivePath build/Watchman.xcarchive \
-            -exportOptionsPlist exportOptions.plist \
-            -exportPath build/ios/ipa
-
-    artifacts:
-      - build/ios/ipa/*.ipa
+            DEVELOPMENT_TEAM=YOUR_TEAM_ID_HERE \
+            -allowProvisioningUpdates
