@@ -7,9 +7,11 @@ workflows:
         XCODE_WORKSPACE: ios/Watchman.xcworkspace
         XCODE_SCHEME: Watchman
     scripts:
-      - name: Install CocoaPods
+      - name: Clean & Install Pods
         script: |
+          echo "Installing CocoaPods..."
           cd ios
+          rm -rf Pods Podfile.lock
           pod install --repo-update
           cd ..
 
