@@ -4,16 +4,9 @@ workflows:
     environment:
       xcode: latest
       vars:
-        XCODE_WORKSPACE: ios/Watchman.xcworkspace
+        XCODE_WORKSPACE: ios/WatchmanWorkspace
         XCODE_SCHEME: Watchman
     scripts:
-      - name: Install CocoaPods
-        script: |
-          echo "Installing Pods..."
-          cd ios
-          pod install --repo-update
-          cd ..
-
       - name: Build IPA using xcodebuild
         script: |
           echo "Archiving app..."
