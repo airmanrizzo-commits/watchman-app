@@ -5,9 +5,9 @@ workflows:
       vars:
         BUNDLE_ID: com.firegatebioscience.watchman
     scripts:
-      - name: Set bundle ID
+      - name: Set bundle identifier
         script: |
-          echo "Setting bundle identifier to $BUNDLE_ID"
-          sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = $BUNDLE_ID;/g" ios/*/*.xcodeproj/project.pbxproj
+          echo "Overriding bundle ID in Xcode project"
+          sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = com.firegatebioscience.watchman;/g" ios/*/*.xcodeproj/project.pbxproj
     artifacts:
       - build/ios/ipa/*.ipa
