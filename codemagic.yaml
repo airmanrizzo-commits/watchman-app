@@ -3,17 +3,23 @@ workflows:
     name: iOS Release
     environment:
       vars:
-        BUNDLE_ID: com.firegatebioscience.watchman
+        XCODE_WORKSPACE: ios/Watchman.xcworkspace   # or .xcodeproj if not using CocoaPods
+        XCODE_SCHEME: Watchman
     scripts:
       - name: Set bundle identifier
         script: |
-          echo "Overriding bundle ID"
-          sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = $BUNDLE_ID;/g" ios/Watchman.xcodeproj/project.pbxproj
+          sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = com.firegatebioscience.watchman;/g" ios/Watchman.xcodeproj/project.pbxproj
 
-      - name: Locate and move .ipa
+      - name: Build IPA
+        script: |
+          xcode-project build-ipa \
+            --workspace "$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
+
+      - name: Copy IPA to artifact folder
         script: |
           mkdir -p build/ios/ipa
-          find . -type f -name "*.ipa" -exec cp {} build/ios/ipa/ \;
+          cp $(find . -name "*.ipa" | head -n 1) build/ios/ipa/
 
     artifacts:
       - build/ios/ipa/*.ipa
