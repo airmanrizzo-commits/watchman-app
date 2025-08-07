@@ -7,6 +7,21 @@ workflows:
         XCODE_WORKSPACE: ios/Watchman.xcworkspace
         XCODE_SCHEME: Watchman
     scripts:
+      - name: Install JS dependencies
+        script: |
+          echo "Installing JS dependencies..."
+          # prefer lockfile if present
+          if [ -f package-lock.json ]; then
+            npm ci
+          elif [ -f yarn.lock ]; then
+            corepack enable || true
+            yarn install --frozen-lockfile || yarn install
+          else
+            npm install
+          fi
+          node -v
+          npm -v || yarn -v || true
+
       - name: Install CocoaPods and generate workspace
         script: |
           echo "Installing CocoaPods..."
