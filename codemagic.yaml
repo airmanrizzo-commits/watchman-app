@@ -4,7 +4,7 @@ workflows:
     environment:
       xcode: latest
       vars:
-        XCODE_WORKSPACE: ios/Watchman.xcworkspace
+        XCODE_PROJECT: ios/Watchman.xcodeproj
         XCODE_SCHEME: Watchman
     scripts:
       - name: Set bundle identifier
@@ -12,18 +12,11 @@ workflows:
           echo "Setting bundle identifier..."
           sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = com.firegatebioscience.watchman;/g" ios/Watchman.xcodeproj/project.pbxproj
 
-      - name: Install CocoaPods
-        script: |
-          echo "Installing CocoaPods..."
-          cd ios
-          pod install || true
-          cd ..
-
       - name: Build IPA using xcodebuild
         script: |
           echo "Archiving app..."
           xcodebuild clean archive \
-            -workspace "$XCODE_WORKSPACE" \
+            -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
             -archivePath build/Watchman.xcarchive \
             -configuration Release \
