@@ -11,19 +11,20 @@ workflows:
           echo "Setting bundle identifier..."
           sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = com.firegatebioscience.watchman;/g" ios/Watchman.xcodeproj/project.pbxproj
 
-      - name: Build IPA
+      - name: Build IPA using xcodebuild
         script: |
-          echo "Building IPA from .xcodeproj..."
-          xcode-project build-ipa \
-            --project "$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME" \
-            --export-method app-store
+          echo "Archiving app..."
+          xcodebuild clean archive \
+            -project "$XCODE_PROJECT" \
+            -scheme "$XCODE_SCHEME" \
+            -archivePath build/Watchman.xcarchive \
+            -configuration Release
 
-      - name: Copy IPA to artifact folder
-        script: |
-          echo "Copying IPA to build/ios/ipa..."
-          mkdir -p build/ios/ipa
-          cp $(find . -name "*.ipa" | head -n 1) build/ios/ipa/
+          echo "Exporting IPA..."
+          xcodebuild -exportArchive \
+            -archivePath build/Watchman.xcarchive \
+            -exportOptionsPlist exportOptions.plist \
+            -exportPath build/ios/ipa
 
     artifacts:
       - build/ios/ipa/*.ipa
