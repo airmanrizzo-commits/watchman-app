@@ -7,4 +7,4 @@ workflows:
           echo "Overriding bundle ID in Xcode project"
           sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = com.firegatebioscience.watchman;/g" ios/Watchman.xcodeproj/project.pbxproj
     artifacts:
-      - build/ios/ipa/*.ipa
+      - build/ios/**/*.ipa
