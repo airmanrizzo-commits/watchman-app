@@ -16,7 +16,8 @@ workflows:
           echo "Building IPA from .xcodeproj..."
           xcode-project build-ipa \
             --project "$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME"
+            --scheme "$XCODE_SCHEME" \
+            --export-method app-store
 
       - name: Copy IPA to artifact folder
         script: |
