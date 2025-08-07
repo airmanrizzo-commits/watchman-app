@@ -2,7 +2,6 @@ workflows:
   ios-release:
     name: iOS Release
     environment:
-      os: macos
       xcode: latest
       ruby: 3.1.2
       vars:
@@ -32,3 +31,12 @@ workflows:
             CODE_SIGN_STYLE=Automatic \
             DEVELOPMENT_TEAM=YOUR_TEAM_ID_HERE \
             -allowProvisioningUpdates
+
+          echo "Exporting IPA..."
+          xcodebuild -exportArchive \
+            -archivePath build/Watchman.xcarchive \
+            -exportOptionsPlist exportOptions.plist \
+            -exportPath build/ios/ipa
+
+    artifacts:
+      - build/ios/ipa/*.ipa
