@@ -7,13 +7,16 @@ workflows:
         XCODE_WORKSPACE: ios/Watchman.xcworkspace
         XCODE_SCHEME: Watchman
     scripts:
-      - name: Install CocoaPods
+      - name: Install CocoaPods and generate workspace
         script: |
-          echo "Installing CocoaPods and generating workspace..."
+          echo "Installing CocoaPods..."
           cd ios
           pod install --repo-update
           ls -la
-          ls -la *.xcworkspace || (echo "No .xcworkspace generated!" && exit 1)
+          if [ ! -d "Watchman.xcworkspace" ]; then
+            echo "❌ Watchman.xcworkspace not found after pod install"
+            exit 1
+          fi
           cd ..
 
       - name: Build IPA using xcodebuild
