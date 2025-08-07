@@ -1,19 +1,13 @@
 workflows:
-  watchman-ios:
-    name: Watchman iOS Build
+  ios-release:
+    name: iOS Release
     environment:
-      groups:
-        - FireGate2  # Group containing CERTIFICATE, CERTIFICATE_PASSWORD, PROVISIONING_PROFILE
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: com.firegatebioscience.watchman
       vars:
-        EXPO_TOKEN: $EXPO_TOKEN
+        BUNDLE_ID: com.firegatebioscience.watchman
     scripts:
-      - npm install -g expo-cli eas-cli
-      - npm install
-      - eas build:configure --platform ios
-      - npx expo prebuild --platform ios
-      - npx eas build -p ios --non-interactive
+      - name: Set bundle ID
+        script: |
+          echo "Setting bundle identifier to $BUNDLE_ID"
+          sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = $BUNDLE_ID;/g" ios/*/*.xcodeproj/project.pbxproj
     artifacts:
       - build/ios/ipa/*.ipa
