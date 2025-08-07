@@ -1,13 +1,5 @@
-workflows:
-  ios-release:
-    name: iOS Release
-    environment:
-      vars:
-        BUNDLE_ID: com.firegatebioscience.watchman
-    scripts:
-      - name: Set bundle identifier
-        script: |
-          echo "Overriding bundle ID in Xcode project"
-          sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = com.firegatebioscience.watchman;/g" ios/*/*.xcodeproj/project.pbxproj
-    artifacts:
-      - build/ios/ipa/*.ipa
+scripts:
+  - name: Set bundle identifier
+    script: |
+      echo "Overriding bundle ID in Xcode project"
+      sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = .*/PRODUCT_BUNDLE_IDENTIFIER = com.firegatebioscience.watchman;/g" ios/Watchman.xcodeproj/project.pbxproj
