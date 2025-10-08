@@ -1,0 +1,18 @@
+{
+  "title": "FG-001: Triplet Synergy in HIV — Data & Code",
+  "description": "Reproducible meta-analysis for FG-001 (CCR5, PD-1/PD-L1, bNAb). Includes forest plot, PRISMA, and manuscript PDF.",
+  "creators": [
+    {"name": "Rizzo, Daniel", "affiliation": "FireGate Biotech", "orcid": ""}
+  ],
+  "license": "CC-BY-4.0",
+  "keywords": ["HIV", "CCR5", "PD-1", "PD-L1", "bNAb", "meta-analysis", "forest plot", "PRISMA"],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "upload_type": "dataset",
+  "access_right": "open"
+}
