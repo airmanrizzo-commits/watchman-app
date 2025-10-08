@@ -1,21 +1,9 @@
-  <TextInput
-    style={styles.input}
-    placeholder="Type scroll command..."
-    placeholderTextColor="#888"
-    value={input}
-    onChangeText={setInput}
-  />
+# FireGate Triplet Strategy Computational Repository (FG-001)
 
-  <Button title="Initiate Scroll" color="#D11A2A" onPress={handleActivate} />
+Data and analysis code supporting the study:
+**“In Silico Triplet Strategy for HIV: Synergy Between Broadly Neutralizing Antibodies, CCR5 Blockade, and PD-1/PD-L1 Pathway Modulation.”**
 
-  <Text style={styles.scrollText}>{scrollMessage}</Text>
+**PI:** Daniel Rizzo — FireGate Biotech LLC  
+**Contact:** daniel@firegatebioscience.com  
 
-  {vaultOpen && (
-    <View style={styles.vaultSection}>
-      <Text style={styles.vaultTitle}>Vault Access Granted</Text>
-      <Text style={styles.vaultText}>Oversight functions are now active. All actions logged. Silence is not neutral.</Text>
-      <Button title="View Scroll Log" onPress={() => {}} />
-      <Button title="Submit Oversight Packet" onPress={() => {}} />
-    </View>
-  )}
-</ScrollView>
+**Permanent archive (Zenodo DOI):** https://doi.org/10.5281/zenodo.17296517
