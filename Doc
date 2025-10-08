@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FG-001: Triplet Synergy in HIV — Data & Code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Data, code, and figures for 'In Silico Triplet Strategy for HIV: Synergy Between CCR5 Blockade, PD-1/PD-L1 Modulation, and Broadly Neutralizing Antibodies'." />
+
+  <!-- OpenGraph / Twitter cards -->
+  <meta property="og:title" content="FG-001: Triplet Synergy in HIV — Data & Code" />
+  <meta property="og:description" content="Reproducible meta-analysis, forest plot, PRISMA, and manuscript PDF." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO/" />
+  <meta property="og:image" content="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO/assets/figure1_forest_plot_gray.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD: schema.org/ScholarlyArticle -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "In Silico Triplet Strategy for HIV: Synergy Between CCR5 Blockade, PD-1/PD-L1 Modulation, and Broadly Neutralizing Antibodies",
+    "author": [{
+      "@type": "Person",
+      "name": "Daniel Rizzo",
+      "affiliation": {"@type": "Organization", "name": "FireGate Biotech"},
+      "email": "daniel@firegatebioscience.com"
+    }],
+    "datePublished": "2025-10-08",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "DOI",
+      "value": "10.5281/zenodo.17296517"
+    },
+    "url": "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO/",
+    "sameAs": [
+      "https://doi.org/10.5281/zenodo.17296517",
+      "https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO"
+    ],
+    "keywords": ["HIV", "CCR5", "PD-1", "PD-L1", "bNAb", "meta-analysis", "forest plot", "PRISMA"],
+    "description": "Reproducible analysis and figures (forest plot, PRISMA) for the FG-001 triplet synergy meta-analysis."
+  }
+  </script>
+
+  <style>
+    body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.5; max-width:900px; margin:40px auto; padding:0 20px;}
+    header, footer{color:#444}
+    img{max-width:100%; height:auto;}
+    code,kbd,pre{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;}
+    .badges img{height:22px; vertical-align:middle}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FG-001: Triplet Synergy in HIV — Data & Code</h1>
+    <p><strong>Author:</strong> Daniel Rizzo, B.S. (FireGate Biotech) · <a href="mailto:daniel@firegatebioscience.com">daniel@firegatebioscience.com</a></p>
+    <p class="badges">
+      <a href="https://doi.org/10.5281/zenodo.17296517"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.17296517.svg"></a>
+      <a href="https://creativecommons.org/licenses/by/4.0/"><img alt="License: CC BY 4.0" src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg"></a>
+    </p>
+  </header>
+
+  <h2>Overview</h2>
+  <p>This repository hosts the reproducible materials for the preprint <em>“In Silico Triplet Strategy for HIV: Synergy Between CCR5 Blockade, PD-1/PD-L1 Modulation, and Broadly Neutralizing Antibodies.”</em> It includes code to regenerate the random-effects meta-analysis, the forest plot (Figure 1), and the PRISMA 2020 flow (Figure 2).</p>
+
+  <h2>Artifacts</h2>
+  <ul>
+    <li><a href="./paper/FG001_HIV_Triplet_Meta_Analysis_FINAL_with_Figures.pdf">Manuscript PDF (with figures)</a></li>
+    <li><a href="./figures/figure1_forest_plot_gray.png">Figure 1 — Forest plot</a></li>
+    <li><a href="./figures/figure2_prisma_gray.png">Figure 2 — PRISMA 2020</a></li>
+    <li><a href="https://doi.org/10.5281/zenodo.17296517">Zenodo dataset and scripts</a></li>
+  </ul>
+
+  <h2>Citation</h2>
+  <pre><code>@software{rizzo_fg001_2025,
+  author  = {Rizzo, Daniel},
+  title   = {FG-001: Triplet synergy in HIV (data and code)},
+  year    = {2025},
+  version = {v1.0.0},
+  doi     = {10.5281/zenodo.17296517},
+  url     = {https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO}
+}</code></pre>
+
+  <footer>
+    <p>© 2025 Daniel Rizzo / FireGate Biotech — <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+  </footer>
+</body>
+</html>
