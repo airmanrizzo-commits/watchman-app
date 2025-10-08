@@ -1,0 +1,21 @@
+---
+
+# 3) `CITATION.cff`
+```yaml
+cff-version: 1.2.0
+title: "FG-001: Triplet Synergy in HIV — Data & Code"
+message: "If you use this repository, please cite it as below."
+type: software
+authors:
+  - family-names: Rizzo
+    given-names: Daniel
+    affiliation: FireGate Biotech
+    email: daniel@firegatebioscience.com
+repository-code: "https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO"
+url: "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO/"
+abstract: "Data, code, and figures supporting the meta-analysis of CCR5 blockade, PD-1/PD-L1 modulation, and bNAb synergy in HIV (FG-001)."
+keywords: [HIV, CCR5, PD-1, PD-L1, bNAb, meta-analysis, forest-plot, PRISMA]
+license: CC-BY-4.0
+version: "v1.0.0"
+date-released: "2025-10-08"
+doi: "10.5281/zenodo.17296517"
